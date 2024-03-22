@@ -1,0 +1,82 @@
+.advert {
+    background-color: #110f0f;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+video {
+    height: 100vh;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.opacity-cover {
+    background-image: linear-gradient(to top, #393434, #242527, #323334, #1a1b1a, #20211f);
+    opacity: 0.5;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.advert-details-container {
+    position: absolute;
+    top: 30%;
+    left: 66px;
+    width: fit-content;
+    z-index: 2;
+}
+
+#advert-title-img {
+    object-fit: contain;
+    object-position: left;
+}
+
+.advert-title-container {
+    width: 100%;
+    height: 60px;
+}
+
+#advert-description {
+    color: #eee;
+    font-size: 1.5rem;
+    width: 40vw;
+    margin: 25px 0;
+}
+
+.advert-btn-container {
+    display: flex;
+}
+
+.advert-btn {
+    padding: 2% 4%;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#advert-play-btn {
+    background-color: #eee;
+    margin-right: 50px;
+}
+
+#advert-play-btn:hover {
+    background-color: rgba(238, 238, 238, 0.5);
+}
+
+#advert-info-btn {
+    background-color: rgb(80, 80, 80);
+    margin-right: 50px;
+    color: #eee;
+}
+
+#advert-info-btn:hover {
+    background-color: rgba(80, 80, 80, 0.5);
+}
