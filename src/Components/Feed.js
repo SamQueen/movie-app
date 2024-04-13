@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import Slide from "./Slide";
 import "./feed.css";
 
-export default function Feed() {
+export default function Feed({setShowSmokeScreen}) {
     const [popularMovies, setPopularMovies] = useState([]);
     const [actionMovies, setActionMovies] = useState([]);
     const [comedyMovies, setComedyMovies] = useState([]);
@@ -66,14 +66,17 @@ export default function Feed() {
 
     return(
         <div className="feed-container">
-            <Slide title="Popular" movieArray={popularMovies} />
-            <Slide title="Comedy" movieArray={comedyMovies} />
-            <Slide title="Crime" movieArray={crimeMovies} />
-            <Slide title="Action" movieArray={actionMovies} />
-            <Slide title="Comedy" movieArray={comedyMovies} />
-            <Slide title="Horror" movieArray={horrorsMovies} />
-            <Slide title="Animation" movieArray={animationMovies} />
-            <Slide title="UpComing" movieArray={upcomingMovies} />
+
+            <div className="smoke-screen-container"> </div>
+
+            <Slide title="Popular" movieArray={popularMovies} setShowSmokeScreen={setShowSmokeScreen}/>
+            <Slide title="Comedy" movieArray={comedyMovies} setShowSmokeScreen={setShowSmokeScreen}/>
+            <Slide title="Crime" movieArray={crimeMovies} setShowSmokeScreen={setShowSmokeScreen}/>
+            <Slide title="Action" movieArray={actionMovies} setShowSmokeScreen={setShowSmokeScreen}/>
+            <Slide title="Comedy" movieArray={comedyMovies} setShowSmokeScreen={setShowSmokeScreen}/>
+            <Slide title="Horror" movieArray={horrorsMovies} setShowSmokeScreen={setShowSmokeScreen}/>
+            <Slide title="Animation" movieArray={animationMovies} setShowSmokeScreen={setShowSmokeScreen}/>
+            <Slide title="UpComing" movieArray={upcomingMovies} setShowSmokeScreen={setShowSmokeScreen}/>
         </div>
     )
 }

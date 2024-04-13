@@ -1,16 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaStar, FaPlay, FaPlus, FaRegThumbsUp, FaRegThumbsDown } from "react-icons/fa";
+import MoviePopup from "./MoviePopup";
 import './movie.css';
 
-export default function Movie({movie}) {
+export default function Movie({movie, setShowSmokeScreen}) {
     const [hoverStyle, setHoverStyle] = useState(false);
+    const [popup, setPopup] = useState(false);
     const roundedRating = (movie.vote_average).toFixed(1);
+
+    const handleMovieClicked = () => { 
+        if (!popup) {
+            setShowSmokeScreen(true);
+            setPopup(true);
+        }
+    }
+
+    const handleExit = () => {
+        setShowSmokeScreen(false);
+        setPopup(false);
+    }
+
+    useEffect(() => {
+        console.log('showPopup:', popup);
+    }, [popup]);
 
     if (movie === undefined) 
         return (<div></div>)
-
+    
     return(
-        <div className="movie-container">
+        <div className="movie-container" onClick={handleMovieClicked}>
+
+            <MoviePopup 
+                movie={movie} 
+                setShowPopup={setPopup} 
+                showPopup={popup} 
+                setShowSmokeScreen={setShowSmokeScreen}
+                handleExit={handleExit}
+            />
 
             <div className="info-container" onMouseEnter={() => setHoverStyle(true)} onMouseLeave={() => setHoverStyle(false)}>
                 <img alt="" src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}></img>

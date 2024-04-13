@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import Searchbar from "./Searchbar";
 import "./navbar.css";
 
 export default function Navbar() {
@@ -21,7 +22,7 @@ export default function Navbar() {
             <div className={"nav-background " + navActiveClass}></div>
             
             <div className="nav-logo-container">
-                <h3>Not Netflix</h3>
+                <h3>NOT NETFLIX</h3>
             </div>
 
             <div className="nav-list-container">
@@ -36,9 +37,15 @@ export default function Navbar() {
 
             <div className="nav-tools-container">
                 <ul className="nav-tools">
-                    <li>Search</li>
+                    
+                    <li className="searchbox-container">
+                        <Searchbar />
+                    </li>
+
                     <li>Kids</li>
+
                     <li>Notifications</li>
+                    
                     <li>Profile</li>
                 </ul>
             </div>

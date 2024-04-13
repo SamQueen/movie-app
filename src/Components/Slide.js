@@ -3,7 +3,7 @@ import './slide.css';
 import { FaChevronRight } from "react-icons/fa";
 import Movie from "./Movie";
 
-export default function Slide({title, movieArray}) {
+export default function Slide({title, movieArray, setShowSmokeScreen}) {
     const [sliding, setSliding] = useState(false);
     const [arr, setArr] = useState([]); 
 
@@ -48,7 +48,7 @@ export default function Slide({title, movieArray}) {
                 {movieArray.map((item, i) => (
                     <div key={i} className={`slide-item ${sliding ? 'slide' : 's'}`}>
                         {/* <img src={"https://image.tmdb.org/t/p/w500/" + item.poster_path}></img> */}
-                        <Movie movie={item}/>
+                        <Movie movie={item} setShowSmokeScreen={setShowSmokeScreen}/>
                     </div>
                 ))}
                 
